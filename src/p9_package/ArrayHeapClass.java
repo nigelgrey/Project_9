@@ -61,7 +61,6 @@ public class ArrayHeapClass
         displayFlag = false;
         heapArray = new int[ arrayCapacity ];
 
-        // TODO: see if copying without for loop works
         for( arrIndex = 0; arrIndex < arraySize; arrIndex++ )
         {
             heapArray[ arrIndex ] = copied.heapArray[ arrIndex ];
@@ -101,9 +100,14 @@ public class ArrayHeapClass
 
             if( heapArray[ currentIndex ] > heapArray[ parentIndex ] )
             {
-                System.out.println( "   - Bubble up:");
-                System.out.printf( "\t - Swapping parent: %d with child: %d\n",
+				if( displayFlag )
+				{
+                    System.out.println( "   - Bubble up:");
+                    System.out.printf(
+						"\t - Swapping parent: %d with child: %d\n",
                         heapArray[ parentIndex ], heapArray[ currentIndex ]);
+				}
+
                 temp = heapArray[ currentIndex ];
                 heapArray[ currentIndex ] = heapArray[ parentIndex ];
                 heapArray[ parentIndex ] = temp;
@@ -213,10 +217,14 @@ public class ArrayHeapClass
                 if( heapArray[ rightChildIndex ] > heapArray[ currentIndex ] &&
                     heapArray[ rightChildIndex ] > heapArray[ leftChildIndex ])
                 {
-                    System.out.println( "   - Trickle down:");
-                    System.out.printf(
+					if( displayFlag )
+					{
+                        System.out.println( "   - Trickle down:");
+                        System.out.printf(
                             "\t - Swapping parent: %d with right child: %d\n",
-                    heapArray[ currentIndex ], heapArray[ rightChildIndex ]);
+                            heapArray[ currentIndex ],
+						    heapArray[ rightChildIndex ]);
+					}
 
                     temp = heapArray[ currentIndex ];
                     heapArray[ currentIndex ] = heapArray[ rightChildIndex ];
@@ -228,10 +236,13 @@ public class ArrayHeapClass
             if( leftChildIndex < arraySize &&
                     heapArray[ leftChildIndex ] > heapArray[ currentIndex ] )
             {
-                System.out.println( "   - Trickle down:");
-                System.out.printf(
+				if( displayFlag )
+				{
+                    System.out.println( "   - Trickle down:");
+                    System.out.printf(
                         "\t - Swapping parent: %d with left child: %d\n",
-                heapArray[ currentIndex ], heapArray[ leftChildIndex ]);
+                    heapArray[ currentIndex ], heapArray[ leftChildIndex ]);
+				}
 
                 temp = heapArray[ currentIndex ];
                 heapArray[ currentIndex ] = heapArray[ leftChildIndex ];
