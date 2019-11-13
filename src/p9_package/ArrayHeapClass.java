@@ -220,11 +220,11 @@ public class ArrayHeapClass
                     if( displayFlag )
                     {
                         System.out.println( "   - Trickle down:");
-                        System.out.printf(
-                            "\t - Swapping parent: %d with right child: %d\n",
-                            heapArray[ currentIndex ],
-			                heapArray[ rightChildIndex ]);
-		            }
+                        System.out.printf(" \t - Swapping parent:" +
+                                " %d with right child: %d\n",
+                                heapArray[ currentIndex ],
+                                heapArray[ rightChildIndex ]);
+                    }
 
                     temp = heapArray[ currentIndex ];
                     heapArray[ currentIndex ] = heapArray[ rightChildIndex ];
@@ -240,8 +240,9 @@ public class ArrayHeapClass
                 {
                     System.out.println( "   - Trickle down:");
                     System.out.printf(
-                        "\t - Swapping parent: %d with left child: %d\n",
-                    heapArray[ currentIndex ], heapArray[ leftChildIndex ]);
+                            "\t - Swapping parent: %d with left child: %d\n",
+                            heapArray[ currentIndex ],
+                            heapArray[ leftChildIndex ]);
                 }
 
                 temp = heapArray[ currentIndex ];
