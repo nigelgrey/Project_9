@@ -100,13 +100,14 @@ public class ArrayHeapClass
 
             if( heapArray[ currentIndex ] > heapArray[ parentIndex ] )
             {
-		        if( displayFlag )
-		        {
-		            System.out.println( "   - Bubble up:");
-		            System.out.printf(
-		            "\t - Swapping parent: %d with child: %d\n",
-                    heapArray[ parentIndex ], heapArray[ currentIndex ]);
-		        }
+                if( displayFlag )
+                {
+                    System.out.println( "   - Bubble up:");
+                    System.out.printf(
+                            "\t - Swapping parent: %d with child: %d\n",
+                            heapArray[ parentIndex ],
+                            heapArray[ currentIndex ]);
+                }
 
                 temp = heapArray[ currentIndex ];
                 heapArray[ currentIndex ] = heapArray[ parentIndex ];
