@@ -100,13 +100,13 @@ public class ArrayHeapClass
 
             if( heapArray[ currentIndex ] > heapArray[ parentIndex ] )
             {
-		if( displayFlag )
-		{
-                    System.out.println( "   - Bubble up:");
-                    System.out.printf(
-		        "\t - Swapping parent: %d with child: %d\n",
-                        heapArray[ parentIndex ], heapArray[ currentIndex ]);
-		}
+		        if( displayFlag )
+		        {
+		            System.out.println( "   - Bubble up:");
+		            System.out.printf(
+		            "\t - Swapping parent: %d with child: %d\n",
+                    heapArray[ parentIndex ], heapArray[ currentIndex ]);
+		        }
 
                 temp = heapArray[ currentIndex ];
                 heapArray[ currentIndex ] = heapArray[ parentIndex ];
@@ -217,14 +217,14 @@ public class ArrayHeapClass
                 if( heapArray[ rightChildIndex ] > heapArray[ currentIndex ] &&
                     heapArray[ rightChildIndex ] > heapArray[ leftChildIndex ])
                 {
-		    if( displayFlag )
-		    {
+                    if( displayFlag )
+                    {
                         System.out.println( "   - Trickle down:");
                         System.out.printf(
                             "\t - Swapping parent: %d with right child: %d\n",
                             heapArray[ currentIndex ],
-			    heapArray[ rightChildIndex ]);
-		    }
+			                heapArray[ rightChildIndex ]);
+		            }
 
                     temp = heapArray[ currentIndex ];
                     heapArray[ currentIndex ] = heapArray[ rightChildIndex ];
@@ -236,13 +236,13 @@ public class ArrayHeapClass
             if( leftChildIndex < arraySize &&
                     heapArray[ leftChildIndex ] > heapArray[ currentIndex ] )
             {
-	        if( displayFlag )
-		{
+                if( displayFlag )
+                {
                     System.out.println( "   - Trickle down:");
                     System.out.printf(
                         "\t - Swapping parent: %d with left child: %d\n",
                     heapArray[ currentIndex ], heapArray[ leftChildIndex ]);
-		}
+                }
 
                 temp = heapArray[ currentIndex ];
                 heapArray[ currentIndex ] = heapArray[ leftChildIndex ];
