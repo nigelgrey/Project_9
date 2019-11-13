@@ -165,8 +165,8 @@ public class ArrayHeapClass
             int removed = heapArray[ 0 ];
             System.out.println( "Removing value: " + removed );
             heapArray[ 0 ] = heapArray[ arraySize - 1 ];
-            trickleDownArrayHeap( 0 );
             arraySize--;
+            trickleDownArrayHeap( 0 );
             return removed;
         }
         return NOT_FOUND;
